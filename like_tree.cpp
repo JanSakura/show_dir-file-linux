@@ -24,13 +24,13 @@ void readDir(const std::string& dirName){
                 std::cout<<"    ";
             }
             if(dirName=="./"){
-            std::cout<<dirName<<fName<<std::endl;
+            std::cout<<"├─"<<fName<<std::endl;
             const std::string childDirName=dirName+fName;
             ++tabs;
             readDir(childDirName);
             --tabs;
             }else{
-            std::cout<<dirName<<"/"<<fName<<std::endl;
+            std::cout<<"  ├─"<<fName<<std::endl;
             const std::string childDirName=dirName+"/"+fName;
             ++tabs;
             readDir(childDirName);
@@ -41,9 +41,9 @@ void readDir(const std::string& dirName){
                 std::cout<<"    ";
             }
             if(dirName=="./"){
-                std::cout<<dirName<<fName<<"  -F"<<std::endl;
+                std::cout<<"├─"<<fName<<"  -F"<<std::endl;
             }else{
-                std::cout<<dirName<<"/"<<fName<<"  -F"<<std::endl;
+                std::cout<<"├─"<<fName<<"  -F"<<std::endl;
             }
         }
     }
